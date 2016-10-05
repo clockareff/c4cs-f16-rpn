@@ -16,6 +16,8 @@ def calculate(string):
 		else
 			stack.append(int(token))
 		print(stack)
+	if len(stack) != 1:
+		raise TypeError("Too many parameters")
 	return stack.pop()
 
 def main():

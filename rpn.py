@@ -1,30 +1,26 @@
 #!/usr/bin/env python3
 
+import operator
+
+operators = {
+	'+': operator.add,
+	'-': operator.sub,
+	'*': operator.mul,
+	'/': operator.truediv,
+}
+
 def calculate(string):
 	stack = list()
 	for token in myarg.split():
-		if token == '+':
-			arg1 = stack.pop()
+		try:
+			token = int(token)
+			stack.append(token)
+		except ValueError:
+			function = operators[token]
 			arg2 = stack.pop()
-			result = arg1 + arg2
-			stack.append(result)
-		else if token == '-':
 			arg1 = stack.pop()
-			arg2 = stack.pop()
-			result = arg1 - arg2
+			result = function = (arg1, arg2)
 			stack.append(result)
-		else if token == '*':
-			arg1 = stack.pop()
-			arg2 = stack.pop()
-			result = arg1 * arg2
-			stack.append(result)
-		else if token == '/':
-			arg1 = stack.pop()
-			arg2 = stack.pop()
-			result = arg1 / arg2
-			stack.append(result)
-		else
-			stack.append(int(token))
 		print(stack)
 	if len(stack) != 1:
 		raise TypeError("Too many parameters")

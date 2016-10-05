@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+#python3 does not work on CAEN so I couldnt test the code
+#I tried python2 but it was throwing errors every time I used if else
+
 import operator
 
 operators = {

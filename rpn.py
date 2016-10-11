@@ -12,7 +12,7 @@ operators = {
 	'/': operator.truediv,
 }
 
-def calculate(string):
+def calculate(myarg):
 	stack = list()
 	for token in myarg.split():
 		try:
@@ -22,7 +22,7 @@ def calculate(string):
 			function = operators[token]
 			arg2 = stack.pop()
 			arg1 = stack.pop()
-			result = function = (arg1, arg2)
+			result = function(arg1, arg2)
 			stack.append(result)
 		print(stack)
 	if len(stack) != 1:

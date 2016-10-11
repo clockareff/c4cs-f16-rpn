@@ -1,0 +1,6 @@
+language: python
+rvm: 
+	Python3.5
+	
+script:
+	make test
